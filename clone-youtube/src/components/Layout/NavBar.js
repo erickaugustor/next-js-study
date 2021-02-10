@@ -23,8 +23,7 @@ import VideoLibrary from '@material-ui/icons/VideoLibrary';
 import History from '@material-ui/icons/History';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
-// import { signIn, useSession } from 'next-auth/client';
-const useSession = () => ({});
+import { signIn, useSession } from 'next-auth/client';
 
 const useStyles = makeStyles((theme) => ({
   mobileDrawer: {
@@ -52,18 +51,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const primaryMenu = [
-  {
-    id: 1,
-    label: 'Início',
-    path: '/',
-    icon: HomeIcon,
-  },
-  {
-    id: 2,
-    label: 'Em alta',
-    path: '/trendding',
-    icon: Whatshot,
-  },
+  { id: 1, label: 'Início', path: '/', icon: HomeIcon },
+  { id: 2, label: 'Em alta', path: '/trendding', icon: Whatshot },
   {
     id: 3,
     label: 'Inscrições',
@@ -81,7 +70,7 @@ function NavBar() {
   const classes = useStyles();
   const router = useRouter();
   const [session] = useSession();
-  const [subscriptions] = useState([
+  const [subscriptions, setSubscriptions] = useState([
     { id: 1, name: 'Canal 1' },
     { id: 2, name: 'Canal 2' },
     { id: 3, name: 'Canal 3' },

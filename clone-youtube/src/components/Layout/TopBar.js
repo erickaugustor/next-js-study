@@ -14,18 +14,11 @@ import Apps from '@material-ui/icons/Apps';
 import MoreVert from '@material-ui/icons/MoreVert';
 import VideoCall from '@material-ui/icons/VideoCall';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import { signIn, signOut, useSession } from 'next-auth/client';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-// import useSettings from 'src/hooks/useSettings';
-import Theme from '../../utils/constants';
-
-const THEMES = Theme;
-
-// import { signIn, signOut, useSession } from 'next-auth/client';
-const signIn = () => ({});
-const signOut = () => ({});
-const useSession = () => [undefined];
-const useSettings = () => [undefined, () => ({})];
+import useSettings from 'src/hooks/useSettings';
+import { THEMES } from 'src/utils/constants';
 
 const useStyles = makeStyles((theme) => ({
   root: {
